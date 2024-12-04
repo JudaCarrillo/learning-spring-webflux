@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.motlrolo.demo</groupId>
-    <artifactId>my-fist-project</artifactId>
+    <artifactId>my-first-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>my-fist-project</name>
-    <description>my-fist-project</description>
+    <name>my-first-project</name>
+    <description>my-first-project</description>
     <url/>
     <licenses>
         <license/>

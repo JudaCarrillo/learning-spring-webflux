@@ -5,12 +5,12 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface IInvoiceService {
-    public Mono<Invoice> saveInvoice(Invoice invoice);
+    Mono<Invoice> saveInvoice(Invoice invoice);
 
-    public Flux<Invoice> findAllInvoices();
+    Flux<Invoice> findAllInvoices();
 
-    public Mono<Invoice> findInvoiceById(Integer id);
+    Mono<Invoice> findInvoiceById(Integer id);
 
-    public Mono<Void> deleteInvoice(Integer id);
+    Mono<Void> deleteInvoice(Integer id);
 
 }
