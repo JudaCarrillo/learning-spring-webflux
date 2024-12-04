@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  main:
+    image: mongo
+    container_name: live.mongo
+    labels:
+      svc: 'live.mongo'
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: InvoiceDB
+    networks:
+      - live_backend
+    volumes:
+      - mongodb_data:/var/lib/mongodb/data
+
+networks:
+  live_backend:
+    driver: bridge
+
+volumes:
+  mongodb_data:
