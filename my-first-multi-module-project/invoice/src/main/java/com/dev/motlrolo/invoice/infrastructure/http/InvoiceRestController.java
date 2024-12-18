@@ -32,7 +32,10 @@ public class InvoiceRestController {
     @DeleteMapping("/delete/{id}")
     public Mono<String> deleteInvoice(@PathVariable Integer id) {
         return invoiceService.deleteInvoice(id)
-                .then(Mono.just("Invoice with id: " + id + " deleted !"));
+                .map(isDeleted ->
+                        isDeleted ? "Invoice with id: " + id + " deleted !"
+                                : "Invoice not found !"
+                );
     }
 
 }

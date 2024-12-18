@@ -11,6 +11,6 @@ public interface IInvoiceService {
 
     Mono<Invoice> findInvoiceById(Integer id);
 
-    Mono<Void> deleteInvoice(Integer id);
+    Mono<Boolean> deleteInvoice(Integer id);
 
 }

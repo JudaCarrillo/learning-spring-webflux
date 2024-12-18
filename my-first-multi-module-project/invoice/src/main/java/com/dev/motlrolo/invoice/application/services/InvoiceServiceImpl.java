@@ -26,8 +26,11 @@ public class InvoiceServiceImpl implements IInvoiceService {
         return invoiceRepository.findById(id).switchIfEmpty(Mono.empty());
     }
 
-    public Mono<Void> deleteInvoice(Integer id) {
-        return invoiceRepository.deleteById(id);
+    public Mono<Boolean> deleteInvoice(Integer id) {
+        return invoiceRepository.existsById(id)
+                .filterWhen(Mono::just)
+                .flatMap(isExist -> invoiceRepository.deleteById(id).thenReturn(true))
+                .switchIfEmpty(Mono.just(false));
     }
 
 }
