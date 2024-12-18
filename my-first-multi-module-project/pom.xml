@@ -14,6 +14,6 @@
 
     <modules>
         <module>invoice</module>
-<!--        <module>webclient</module>-->
+        <module>web-client</module>
     </modules>
 </project>
